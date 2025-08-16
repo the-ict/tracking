@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.absolute {
+    position: absolute;
+    bottom: 10%;
+    width: 100vw;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start {
+    padding: 10px 30px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor:pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.stop {
+    padding: 10px 30px;
+    color: white;
+    font-weight: bold;
+    cursor:pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    background-color: #f44336;
+}
