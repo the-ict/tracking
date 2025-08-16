@@ -12,18 +12,11 @@ export default function Map() {
 
   const geo = navigator.geolocation
 
-  useEffect(() => {
-    let watchId;
 
-    if (isTracking && geo) {
-      watchId = geo.watchPosition(handleLocation, handleError);
-    }
-
-    return () => {
-      if (watchId) geo.clearWatch(watchId);
-    };
-  }, [isTracking]);
-
+  geo.watchPosition(handleLocation, handleError, {
+    enableHighAccuracy: true,
+    maximumAge: 0,
+  });
 
   useEffect(() => {
     if (geo) {
@@ -36,7 +29,7 @@ export default function Map() {
   }, [])
 
   function handleLocation(position) {
-    console.log("Current position: ", position);
+    console.log("handle location position: ", position);
 
     const { latitude, longitude } = position.coords;
     console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
